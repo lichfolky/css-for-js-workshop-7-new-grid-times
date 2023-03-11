@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { QUERIES } from '../../constants';
 
 import { MARKET_DATA, SPORTS_STORIES } from '../../data';
 
@@ -45,16 +46,48 @@ const SpecialtyStoryGrid = () => {
 };
 
 const Wrapper = styled.div`
-  display: grid;
   gap: 48px;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media ${QUERIES.laptopAndUp} {
+    grid-template-columns: repeat(2,1fr);
+
+  }
 `;
 
-const MarketsSection = styled.section``;
+const MarketsSection = styled.section`
+`;
 
-const MarketCards = styled.div``;
+const MarketCards = styled.div`
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2,1fr);
 
-const SportsSection = styled.section``;
+  @media ${QUERIES.tabletAndUp} {
+    grid-template-columns: repeat(4,1fr);
+  }
 
-const SportsStories = styled.div``;
+  @media ${QUERIES.laptopAndUp} {
+    grid-template-columns: repeat(3,1fr);
+
+  }
+
+`;
+
+
+const SportsSection = styled.section`
+  overflow-y: auto;
+`;
+
+const SportsStories = styled.div`
+  grid-template-columns: repeat(5, 1fr);
+  display: grid; 
+  gap:1rem;
+  width: 200%;
+  padding-bottom:1rem;
+
+
+`;
 
 export default SpecialtyStoryGrid;

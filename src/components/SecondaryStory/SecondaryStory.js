@@ -20,6 +20,7 @@ const Wrapper = styled.article`
     'image abstract';
   gap: 4px 16px;
   grid-template-columns: 120px 1fr;
+  grid-template-rows: auto auto;
   color: var(--color-gray-900);
 `;
 
@@ -45,6 +46,11 @@ const Abstract = styled.p`
   grid-area: abstract;
   font-size: 1rem;
   white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  align-self: start;
 `;
 
 export default SecondaryStory;
